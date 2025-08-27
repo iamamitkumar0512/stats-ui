@@ -42,7 +42,7 @@ const useGetCgdLinePlot = (
         });
 
         const response = await fetch(
-          `${API_BASE_URL}/api/cdf_lineplot?${queryParams}`,
+          `${API_BASE_URL}/cdf_lineplot?${queryParams}`,
           {
             method: "GET",
             headers: {

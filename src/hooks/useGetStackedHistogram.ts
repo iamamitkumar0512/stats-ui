@@ -42,7 +42,7 @@ const useGetStackedHistogram = (
         });
 
         const response = await fetch(
-          `${API_BASE_URL}/api/stacked_histogram?${queryParams}`,
+          `${API_BASE_URL}/stacked_histogram?${queryParams}`,
           {
             method: "GET",
             headers: {

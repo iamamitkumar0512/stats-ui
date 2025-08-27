@@ -49,7 +49,7 @@ const useGetWordCloud = (
         });
 
         const response = await fetch(
-          `${API_BASE_URL}/api/wordcloud?${queryParams}`,
+          `${API_BASE_URL}/wordcloud?${queryParams}`,
           {
             method: "GET",
             headers: {

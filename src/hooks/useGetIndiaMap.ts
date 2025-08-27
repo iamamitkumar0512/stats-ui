@@ -41,7 +41,7 @@ const useGetIndiaMap = (
         });
 
         const response = await fetch(
-          `${API_BASE_URL}/api/india_map?${queryParams}`,
+          `${API_BASE_URL}/india_map?${queryParams}`,
           {
             method: "GET",
             headers: {

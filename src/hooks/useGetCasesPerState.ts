@@ -46,7 +46,7 @@ const useGetCasesPerState = (
           queryParams.toString()
         );
         const response = await fetch(
-          `${API_BASE_URL}/api/cases_per_state?${queryParams}`,
+          `${API_BASE_URL}/cases_per_state?${queryParams}`,
           {
             method: "GET",
             headers: {

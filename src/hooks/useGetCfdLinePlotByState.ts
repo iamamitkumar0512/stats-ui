@@ -50,7 +50,7 @@ const useGetCfdLinePlotByState = (
         });
 
         const response = await fetch(
-          `${API_BASE_URL}/api/cdf_lineplot_state?${queryParams}`,
+          `${API_BASE_URL}/cdf_lineplot_state?${queryParams}`,
           {
             method: "GET",
             headers: {
