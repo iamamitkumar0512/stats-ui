@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE_URL } from "../constants";
 
 interface WordCloudData {
   imageUrl: string;
@@ -47,12 +48,15 @@ const useGetWordCloud = (
           end_year: endYear.toString(),
         });
 
-        const response = await fetch(`/api/wordcloud?${queryParams}`, {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-          },
-        });
+        const response = await fetch(
+          `${API_BASE_URL}/api/wordcloud?${queryParams}`,
+          {
+            method: "GET",
+            headers: {
+              accept: "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE_URL } from "../constants";
 
 interface CasesPerStateData {
   // Add properties based on what the API returns
@@ -44,12 +45,15 @@ const useGetCasesPerState = (
           "Fetching cases per state with params:",
           queryParams.toString()
         );
-        const response = await fetch(`/api/cases_per_state?${queryParams}`, {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-          },
-        });
+        const response = await fetch(
+          `${API_BASE_URL}/api/cases_per_state?${queryParams}`,
+          {
+            method: "GET",
+            headers: {
+              accept: "application/json",
+            },
+          }
+        );
 
         console.log("Response status:", response.status);
         console.log(

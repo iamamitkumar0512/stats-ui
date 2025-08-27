@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE_URL } from "../constants";
 
 interface IndiaMapData {
   imageUrl: string;
@@ -39,12 +40,15 @@ const useGetIndiaMap = (
           end_year: endYear.toString(),
         });
 
-        const response = await fetch(`/api/india_map?${queryParams}`, {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-          },
-        });
+        const response = await fetch(
+          `${API_BASE_URL}/api/india_map?${queryParams}`,
+          {
+            method: "GET",
+            headers: {
+              accept: "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

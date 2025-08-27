@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE_URL } from "../constants";
 
 interface StackedHistogramData {
   imageUrl: string;
@@ -40,12 +41,15 @@ const useGetStackedHistogram = (
           end_year: endYear.toString(),
         });
 
-        const response = await fetch(`/api/stacked_histogram?${queryParams}`, {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-          },
-        });
+        const response = await fetch(
+          `${API_BASE_URL}/api/stacked_histogram?${queryParams}`,
+          {
+            method: "GET",
+            headers: {
+              accept: "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

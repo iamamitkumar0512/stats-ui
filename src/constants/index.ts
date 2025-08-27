@@ -70,3 +70,8 @@ export const DEFAULT_VALUES = {
   TABLE_TYPE: "by" as "by" | "against",
   COLUMN_TYPE: "a_aff_resolved" as "a_aff_resolved" | "c_aff_resolved",
 };
+
+// API Configuration
+export const API_BASE_URL = import.meta.env.PROD
+  ? "https://complainst-deployment.onrender.com"
+  : "";
